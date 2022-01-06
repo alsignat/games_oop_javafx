@@ -20,8 +20,15 @@ public final class Logic {
         figures[index] = figures[index].copy(dest);
     }
 
-    private boolean free(Cell[] steps) throws OccupiedCellException {
-        return true;
+    private void free(Cell[] steps) throws OccupiedCellException {
+        for (Cell cell : steps) {
+            try {
+                int index = findBy(cell);
+                throw new OccupiedCellException();
+            } catch (FigureNotFoundException e) {
+                System.out.println("This cell is free");
+            }
+        }
     }
 
     public void clean() {
