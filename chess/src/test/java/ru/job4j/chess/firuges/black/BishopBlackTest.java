@@ -8,7 +8,6 @@ import ru.job4j.chess.firuges.Figure;
 
 public class BishopBlackTest {
 
-
     @Test
     public void testPosition() {
         Cell dest = Cell.A1;
